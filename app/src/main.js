@@ -40,6 +40,13 @@ async function main() {
     server.listen(PORT, () => {
         console.log(`Server running at http://localhost:${PORT}/`);
     });
+
+    process.on('SIGINT', () => {
+        server.close(() => {
+            console.log(`Server stopped at ${new Date().toISOString()}`);
+            process.exit(0);
+        });
+    });
 }
 
 main().catch(console.error);
