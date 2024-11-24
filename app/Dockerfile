@@ -2,7 +2,7 @@ FROM node:22.11.0-alpine
 
 ENV NODE_ENV production
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 RUN --mount=type=bind,source=package.json,target=package.json \
     --mount=type=bind,source=package-lock.json,target=package-lock.json \
