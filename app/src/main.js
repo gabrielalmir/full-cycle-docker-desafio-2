@@ -1,12 +1,11 @@
 import http from 'node:http';
-import { createDatabaseConnection, ensureDatabaseMigration } from './db.js';
+import { createDatabaseConnection } from './db.js';
 
 const PORT = process.env.PORT || 3000;
 
 async function main() {
     // Create database connection and ensure database migration
     const connection = await createDatabaseConnection();
-    await ensureDatabaseMigration(connection);
     await connection.end();
 
     // Create HTTP server

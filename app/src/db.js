@@ -10,12 +10,3 @@ export async function createDatabaseConnection() {
 
     return connection;
 }
-
-export async function ensureDatabaseMigration(connection) {
-    await connection.query(`
-        CREATE TABLE IF NOT EXISTS people (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            name VARCHAR(255) NOT NULL
-        );
-    `);
-}
