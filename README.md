@@ -71,5 +71,7 @@ docker-compose down
 
 - **docker-compose.yml**: Configuração de todos os serviços (nginx, Node.js, MySQL) e rede interna.
 - **nginx/default.conf**: Configuração do NGINX como proxy reverso.
+- **app/Dockerfile**: Dockerfile para a construção da imagem da aplicação Node.js.
 - **app/src/main.js**: Código principal do servidor em Node.js, que conecta ao MySQL e manipula as requisições HTTP.
 - **app/src/db.js**: Conexão e configuração do banco de dados MySQL.
+- **app/package.json**: Dependências e scripts da aplicação Node.js.
